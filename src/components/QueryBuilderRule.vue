@@ -4,14 +4,14 @@
       <label>{{ rule.label }}</label>
 
       <div>
-      <select v-if="typeof rule.operands !== 'undefined'" v-model="query.selectedOperand" :class="{ 'form-control': styled }">
-        <option v-for="operand in rule.operands">{{ operand }}</option>
+      <select v-if="typeof rule.operands !== 'undefined'" v-model="query.selectedOperand" :class="{ 'form-control custom-select': styled }">
+        <option v-for="operand in rule.operands" :key="operand">{{ operand }}</option>
       </select>
       </div>
 
       <div>
-      <select v-if="! isMultipleChoice" v-model="query.selectedOperator" :class="{ 'form-control': styled }">
-        <option v-for="operator in rule.operators" v-bind:value="operator">
+      <select v-if="! isMultipleChoice" v-model="query.selectedOperator" :class="{ 'form-control custom-select': styled }">
+        <option v-for="operator in rule.operators" v-bind:value="operator" :key="operator">
           {{ operator }}
         </option>
       </select>
@@ -26,29 +26,29 @@
       </template>
 
       <div class="checkbox" v-if="rule.inputType === 'checkbox'">
-        <label v-for="choice in rule.choices" :class="{ 'float-left': styled }">
+        <label v-for="choice in rule.choices" :class="{ 'float-left': styled }" :key="choice.value">
           <input type="checkbox" :value="choice.value" v-model="query.value"> {{ choice.label }}
         </label>
       </div>
 
       <div class="radio" v-if="rule.inputType === 'radio'">
-        <label v-for="choice in rule.choices" :class="{ 'float-left': styled }">
+        <label v-for="choice in rule.choices" :class="{ 'float-left': styled }" :key="choice.value">
           <input type="radio" :value="choice.value" v-model="query.value"> {{ choice.label }}
         </label>
       </div>
       
       <select
         v-if="rule.inputType === 'select'"
-        :class="{ 'form-control': styled }"
+        :class="{ 'form-control custom-select': styled }"
         :multiple="rule.type === 'multi-select'"
         v-model="query.value">
 
         <template v-for="(option, option_key) in selectOptions">
-          <option v-if="!Array.isArray(option)" :value="option.value">
+          <option v-if="!Array.isArray(option)" :value="option.value" :key="option.key">
             {{ option.label }}
           </option>
-          <optgroup v-if="Array.isArray(option)" :label="option_key">
-            <option v-for="sub_option in option" :value="sub_option.value">{{ sub_option.label }}</option>
+          <optgroup v-if="Array.isArray(option)" :label="option_key" :key="option.key">
+            <option v-for="sub_option in option" :value="sub_option.value" :key="sub_option.value">{{ sub_option.label }}</option>
           </optgroup>
         </template>
 

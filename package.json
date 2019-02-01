@@ -1,6 +1,7 @@
 {
   "name": "vue-query-builder",
   "version": "0.6.1",
+  "license": "MIT",
   "main": "./dist/VueQueryBuilder.common.js",
   "scripts": {
     "serve": "vue-cli-service serve --name VueQueryBuilder src/main.js",
@@ -12,25 +13,25 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "vue": "^2.5.16"
+    "vue": "^2.5.22"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
-    "@vue/cli-plugin-e2e-cypress": "^3.0.0-beta.15",
-    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
-    "@vue/cli-plugin-unit-jest": "^3.0.0-beta.15",
-    "@vue/cli-service": "^3.0.0-beta.15",
-    "@vue/eslint-config-standard": "^3.0.0-rc.3",
-    "@vue/test-utils": "^1.0.0-beta.16",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^23.0.1",
-    "less": "^3.0.4",
+    "@babel/core": "^7.2.2",
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-plugin-unit-jest": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/test-utils": "^1.0.0-beta.28",
+    "babel-jest": "^24.0.0",
+    "bootstrap": "^4.2.1",
+    "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1",
-    "vue-template-compiler": "^2.5.16",
-    "vuepress": "^0.10.2",
-    "bootstrap": "^3.3.7"
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.22",
+    "vuepress": "^0.14.8"
   },
   "browserslist": [
     "> 1%",
