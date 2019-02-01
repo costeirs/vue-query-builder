@@ -1,6 +1,6 @@
 <template>
   <div class="vqb-group" :class="classObject">
-    <div class="vqb-group-heading" :class="{ 'card-heading': styled }">
+    <div class="vqb-group-heading" :class="{ 'card-header': styled }">
       <div class="match-type-container" :class="{ 'form-inline': styled }">
         <div :class="{ 'form-group': styled }">
           <label for="vqb-match-type" class="mr-2">{{ labels.matchType }}</label>
