@@ -38,6 +38,16 @@ let rules = [
         {label: "violet", value: 'Violet'},
       ]
     },
+    {
+      type: "date",
+      id: "date",
+      label: "The Date",
+    },
+    {
+      type: "datetime-local",
+      id: "datetimelocal",
+      label: "The DateTime Local",
+    },
   ];
 
 new Vue({

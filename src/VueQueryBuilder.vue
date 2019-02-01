@@ -76,6 +76,16 @@ export default {
           inputType: "number",
           id: "number-field"
         },
+        "date": {
+          operators: ['=','<>','<','<=','>','>='],
+          inputType: "date",
+          id: "date-field"
+        },
+        "datetime": {
+          operators: ['=','<>','<','<=','>','>='],
+          inputType: "datetime-local",
+          id: "datetime-field"
+        },
         "custom": {
           operators: [],
           inputType: "text",

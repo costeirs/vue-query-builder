@@ -18,9 +18,11 @@
 
       </div>
       <div class="ml-1">
-      <input :class="{ 'form-control': styled }" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
-      <input :class="{ 'form-control': styled }" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
-
+      <input :class="{ 'form-control': styled }" v-show="showField" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
+      <input :class="{ 'form-control': styled }" v-show="showField" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
+      <input :class="{ 'form-control': styled }" v-show="showField" v-if="rule.inputType === 'date'" type="date" v-model="query.value">
+      <input :class="{ 'form-control': styled }" v-show="showField" v-if="rule.inputType === 'datetime-local'" type="datetime-local" v-model="query.value">
+	
       <template v-if="isCustomComponent">
         <component :value="query.value" @input="updateQuery" :is="rule.component"></component>
       </template>
@@ -86,6 +88,10 @@ export default {
   },
 
   computed: {
+    showField () {
+      return !['is empty', 'is not empty'].includes(this.query.selectedOperator);
+    },
+    
     isMultipleChoice () {
       return ['radio', 'checkbox', 'select'].indexOf(this.rule.inputType) >= 0;
     },
