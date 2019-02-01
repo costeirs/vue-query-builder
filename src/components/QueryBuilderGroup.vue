@@ -14,21 +14,6 @@
     </div>
 
     <div class="vqb-group-body" :class="{ 'card-body': styled }">
-      <div class="rule-actions" :class="{ '': styled }">
-        <div :class="{ 'form-row': styled }">
-          <div class="col-12 col-md-4 col-lg-4 col-sm-12 col-xs12">
-
-          <select v-model="selectedRule" :class="{ 'form-control custom-select': styled }">
-            <option v-for="(rule, index) in rules" :key="index" :value="rule">{{ rule.label }}</option>
-          </select>
-
-          </div>
-          <div class="col-12 col-md-8 col-lg-8 col-sm-12 col-xs-12">
-          <button type="button" @click="addRule" :class="{ 'btn btn-secondary': styled }" v-html="labels.addRule"></button>
-          <button type="button" :class="{ 'btn btn-secondary': styled }" v-if="this.depth < this.maxDepth" @click="addGroup" v-html="labels.addGroup"></button>
-          </div>
-        </div>
-      </div>
 
       <div class="children">
         <component
@@ -48,6 +33,23 @@
           v-on:child-deletion-requested="removeChild">
         </component>
       </div>
+
+      <div class="rule-actions" :class="{ '': styled }">
+        <div :class="{ 'form-row': styled }">
+          <div class="col-12 col-md-4 col-lg-4 col-sm-12 col-xs12">
+
+          <select v-model="selectedRule" :class="{ 'form-control custom-select': styled }">
+            <option v-for="(rule, index) in rules" :key="index" :value="rule">{{ rule.label }}</option>
+          </select>
+
+          </div>
+          <div class="col-12 col-md-8 col-lg-8 col-sm-12 col-xs-12">
+          <button type="button" @click="addRule" :class="{ 'btn btn-secondary': styled }" v-html="labels.addRule"></button>
+          <button type="button" :class="{ 'btn btn-secondary': styled }" v-if="this.depth < this.maxDepth" @click="addGroup" v-html="labels.addGroup"></button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
