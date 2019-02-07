@@ -44,7 +44,7 @@ let rules = [
       label: "The Date",
     },
     {
-      type: "datetime-local",
+      type: "datetime",
       id: "datetimelocal",
       label: "The DateTime Local",
     },
